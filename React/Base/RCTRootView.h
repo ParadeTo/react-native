@@ -159,7 +159,7 @@ extern
  * See `UIGestureRecognizerDelegate` for more details.
  */
 - (void)cancelTouches;
-
+- (void)runApplication:(RCTBridge *)bridge;
 @end
 
 NS_ASSUME_NONNULL_END

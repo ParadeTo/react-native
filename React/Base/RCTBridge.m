@@ -428,4 +428,11 @@ RCT_NOT_IMPLEMENTED(-(instancetype)init)
   [self.batchedBridge loadAndExecuteSplitBundleURL:bundleURL onError:onError onComplete:onComplete];
 }
 
+- (void)loadAndExecuteSplitBundleURL2:(NSURL *)bundleURL
+                            onError:(dispatch_block_t)onError
+                          onComplete:(dispatch_block_t)onComplete;
+{
+  [self.batchedBridge loadAndExecuteSplitBundleURL2:bundleURL onError:onError onComplete:onComplete];
+}
+
 @end

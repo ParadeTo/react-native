@@ -318,4 +318,7 @@ RCT_EXTERN void RCTEnableTurboModuleBlockCopy(BOOL enabled);
                              onError:(RCTLoadAndExecuteErrorBlock)onError
                           onComplete:(dispatch_block_t)onComplete;
 
+- (void)loadAndExecuteSplitBundleURL2:(NSURL *)bundleURL
+                            onError:(dispatch_block_t)onError
+                          onComplete:(dispatch_block_t)onComplete;
 @end

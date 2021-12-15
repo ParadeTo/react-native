@@ -1022,6 +1022,21 @@ struct RCTInstanceCallback : public InstanceCallback {
   [self.devSettings setupHMRClientWithBundleURL:self.bundleURL];
 }
 
+- (void)loadAndExecuteSplitBundleURL2:(NSURL *)bundleURL
+                             onError:(dispatch_block_t)onError
+                          onComplete:(dispatch_block_t)onComplete
+{
+    [RCTJavaScriptLoader loadBundleAtURL:bundleURL
+                                onProgress:nil
+                                onComplete:^(NSError *error, RCTSource *source) {
+                                  if (error) {
+                                    return;
+                                  }
+                                  [self executeSourceCode:source.data sync:YES];
+                                  onComplete();
+                                }];
+}
+
 #if RCT_DEV_MENU
 - (void)loadAndExecuteSplitBundleURL:(NSURL *)bundleURL
                              onError:(RCTLoadAndExecuteErrorBlock)onError
